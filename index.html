@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="" ng-app="shopping-clueless">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Clueless</title>
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+  <link rel="stylesheet" href="styles.css"/>
+  <link href="https://fonts.googleapis.com/css?family=Galada" rel="stylesheet">
+ 
+ 
+</head>
+
+<body ng-controller="SearchController as search">
+	<div class="container">
+			<header>
+				<br/>
+				<div class="headerstyling">
+				<h1>Clueless . . . ?</h1>
+				<p class="lead">* The Valley Girl's Guide to "What Does That Mean?" *</p>
+
+				</div>
+			</header>
+
+			<div class="input-group">
+		    <input type="text" class="form-control" ng-model="search.input" placeholder="What word or phrase, can I like, look up for you?">
+		    <span class="input-group-btn">
+		      <button class="btn btn-default" type="button" ng-click="search.translateItem(search.input)" >Go!</button>--><!--<button class="btn btn-default" type="button" ng-click="search.getValtalk(search.input)" >Go translate!</button>-->
+		    </span>
+		  </div><!-- /input-group -->
+
+
+		  	<div class="col-xs-4"><img src="http://i.imgur.com/qmkUeRZ.jpg?2" alt="Cher"></div>
+
+			<div class="col-xs-8">
+			<div class="row" style="margin-top: 24px;">
+				
+					
+					<div class="panel panel-warning">
+					  <div class="panel-heading">{{search.results.list[0].word}}</div>
+					  <div class="panel-body">
+					  <p>{{search.results}}</p> 
+					    <p>{{search.results.contents.translated}}</p>
+					    </div>
+					  </div>
+					</div>
+				
+			</div>		  
+	</div>
+
+  <!-- jQuery -->
+  
+  <script src="bower_components/jquery/dist/jquery.js"></script>
+  <!-- Bootstrap JavaScript -->
+  <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+  <!-- Angular -->
+ <script src="bower_components/angular/angular.js"></script>
+  <!--
+ Angular-Toastr -->
+
+  <script src="app/app.module.js"></script>
+  <script src="app/core/clueless.factory.js"></script>
+  <script src="app/search/search.controller.js"></script>
+  <script src="app/core/valley.factory.js"></script>
+
+<script src="http://code.responsivevoice.org/responsivevoice.js"></script>
+
+
+</body>
+
+</html>
